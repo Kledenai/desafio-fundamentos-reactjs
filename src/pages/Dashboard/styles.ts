@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 
 interface CardProps {
   total?: boolean;
+  theme: DefaultTheme;
 }
 
 export const Container = styled.div`
@@ -24,21 +25,20 @@ export const CardContainer = styled.section`
 `;
 
 export const Card = styled.div`
-  background: ${({ total }: CardProps): string => (total ? '#FF872C' : '#fff')};
+  background: ${({ total, theme }: CardProps): string =>
+    total ? '#FF872C' : theme.colors.shape};
   padding: 22px 32px;
   border-radius: 5px;
-  color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
-
+  color: ${({ total, theme }: CardProps): string =>
+    total ? '#fff' : theme.colors.titles};
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     p {
       font-size: 16px;
     }
   }
-
   h1 {
     margin-top: 14px;
     font-size: 36px;
@@ -49,45 +49,37 @@ export const Card = styled.div`
 
 export const TableContainer = styled.section`
   margin-top: 64px;
-
   table {
     width: 100%;
     border-spacing: 0 8px;
-
     th {
-      color: #969cb3;
+      color: ${props => props.theme.colors.text};
       font-weight: normal;
       padding: 20px 32px;
       text-align: left;
       font-size: 16px;
       line-height: 24px;
     }
-
     td {
       padding: 20px 32px;
       border: 0;
-      background: #fff;
+      background: ${props => props.theme.colors.shape};
       font-size: 16px;
       font-weight: normal;
-      color: #969cb3;
-
+      color: ${props => props.theme.colors.text};
       &.title {
-        color: #363f5f;
+        color: ${props => props.theme.colors.titles};
       }
-
       &.income {
-        color: #12a454;
+        color: ${props => props.theme.colors.green};
       }
-
       &.outcome {
-        color: #e83f5b;
+        color: ${props => props.theme.colors.red};
       }
     }
-
     td:first-child {
       border-radius: 8px 0 0 8px;
     }
-
     td:last-child {
       border-radius: 0 8px 8px 0;
     }

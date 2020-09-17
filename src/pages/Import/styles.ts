@@ -12,12 +12,12 @@ export const Title = styled.h1`
   font-weight: 500;
   font-size: 36px;
   line-height: 54px;
-  color: #363f5f;
+  color: ${props => props.theme.colors.titles};
   text-align: center;
 `;
 
 export const ImportFileContainer = styled.section`
-  background: #fff;
+  background: ${props => props.theme.colors.shape};
   margin-top: 40px;
   border-radius: 5px;
   padding: 64px;
@@ -28,19 +28,16 @@ export const Footer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   p {
     display: flex;
     align-items: center;
     font-size: 12px;
     line-height: 18px;
-    color: #969cb3;
-
+    color: ${props => props.theme.colors.text};
     img {
       margin-right: 5px;
     }
   }
-
   button {
     background: #ff872c;
     color: #fff;
@@ -48,7 +45,6 @@ export const Footer = styled.section`
     padding: 15px 80px;
     border: 0;
     transition: background-color 0.2s;
-
     &:hover {
       background: ${shade(0.2, '#ff872c')};
     }
