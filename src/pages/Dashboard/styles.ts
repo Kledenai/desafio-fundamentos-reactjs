@@ -31,14 +31,17 @@ export const Card = styled.div`
   border-radius: 5px;
   color: ${({ total, theme }: CardProps): string =>
     total ? '#fff' : theme.colors.titles};
+
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     p {
       font-size: 16px;
     }
   }
+
   h1 {
     margin-top: 14px;
     font-size: 36px;
@@ -49,9 +52,11 @@ export const Card = styled.div`
 
 export const TableContainer = styled.section`
   margin-top: 64px;
+
   table {
     width: 100%;
     border-spacing: 0 8px;
+
     th {
       color: ${props => props.theme.colors.text};
       font-weight: normal;
@@ -60,6 +65,7 @@ export const TableContainer = styled.section`
       font-size: 16px;
       line-height: 24px;
     }
+
     td {
       padding: 20px 32px;
       border: 0;
@@ -67,19 +73,24 @@ export const TableContainer = styled.section`
       font-size: 16px;
       font-weight: normal;
       color: ${props => props.theme.colors.text};
+
       &.title {
         color: ${props => props.theme.colors.titles};
       }
+
       &.income {
         color: ${props => props.theme.colors.green};
       }
+
       &.outcome {
         color: ${props => props.theme.colors.red};
       }
     }
+
     td:first-child {
       border-radius: 8px 0 0 8px;
     }
+
     td:last-child {
       border-radius: 0 8px 8px 0;
     }

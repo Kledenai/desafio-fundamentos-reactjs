@@ -11,6 +11,7 @@ export const Button = styled.button<ButtonProps>`
   width: 40px;
   top: 10px;
   right: 10px;
+
   .dash {
     display: block;
     width: 100%;
@@ -20,6 +21,7 @@ export const Button = styled.button<ButtonProps>`
     position: absolute;
     top: 7px;
   }
+
   .circle {
     position: relative;
     display: block;
@@ -29,6 +31,7 @@ export const Button = styled.button<ButtonProps>`
     background: #fff;
     z-index: 10;
     transition: all 200ms ease;
+
     ${props =>
       props.active &&
       css`
